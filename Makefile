@@ -1,6 +1,7 @@
 TARGET = diceware
+SOURCES = diceware.c diceware.h
 
-$(TARGET): diceware.c diceware.h
+$(TARGET): $(SOURCES)
 	cc -std=c89 -o $(TARGET) diceware.c
 
 info:
