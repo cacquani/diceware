@@ -1,8 +1,13 @@
-TARGET = diceware
-SOURCES = diceware.c diceware.h
+SRCDIR = sources
+SOURCES := $(wildcard $(SRCDIR)/*)
+DSTDIR ?= dest
+TARGET ?= $(DSTDIR)/diceware
 
-$(TARGET): $(SOURCES)
-	cc -std=c89 -o $(TARGET) diceware.c
+$(DSTDIR)/$(TARGET): $(SOURCES) | $(DSTDIR)
+	cc -std=c89 -o $(TARGET) $(SRCDIR)/diceware.c
+
+$(DSTDIR):
+	mkdir $(DSTDIR)
 
 info:
 	echo "MAKEFILE_LIST=$(MAKEFILE_LIST)"
@@ -15,6 +20,8 @@ info:
 	echo ".FEATURES=$(.FEATURES)"
 
 clean:
+ifneq "$(filter-out $(SOURCES),$(TARGET))" ""
 	-rm $(TARGET)
+endif
 
 .PHONY: clean info
