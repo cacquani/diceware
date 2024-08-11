@@ -1,0 +1,4 @@
+usage: diceware [<options>] <command>
+
+Commands:
+ help: Prints this help
