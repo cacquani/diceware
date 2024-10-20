@@ -1,4 +1,4 @@
-#include "diceware.h"
+#include "includes/diceware.h"
 
 int main(int argc, char **argv)
 {
@@ -9,7 +9,7 @@ int main(int argc, char **argv)
    * Will also need something similar for the words lists? */
   int c;
   FILE *file;
-  file = fopen("sources/help", "r");
+  file = fopen("sources/files/help", "r");
   if (file) {
     while ((c = getc(file)) != EOF)
       putchar(c);
