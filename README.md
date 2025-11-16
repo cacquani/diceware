@@ -23,8 +23,9 @@ A static library can be statically linked to the main executable, so that the
 main executable can be distributed and used without having to install any
 (shared) library separately.
 
-[https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/create-libraries/index](Article
-on creating libraries), and a rather good one, it also goes into details on the
+[Article on creating
+libraries](https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/create-libraries/index),
+and a rather good one, it also goes into details on the
 difference between static and shared libraries, and how to load shared
 libraries dynamically from inside the main executable using `libdl` and
 pointers.
@@ -38,8 +39,8 @@ need to decide the data format (csv? plain one-entry-per-line?)
 
 ## Shared Libraries
 
-[https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/libraries/shared/index](shared
-libraries) which are the `.so` ones installed in `/usr/lib` or `/usr/local/lib`
+[shared libraries](https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/libraries/shared/index)
+which are the `.so` ones installed in `/usr/lib` or `/usr/local/lib`
 
 Shared libraries are created without using the Archive utility, are linked
 dynamically and must be installed separately into the appropriate system path
