@@ -1,4 +1,4 @@
-usage: diceware [<options>] <command>
+usage: diceware <command> [<args>]
 
 Commands:
- help: Prints this help
+  help       Prints this help
