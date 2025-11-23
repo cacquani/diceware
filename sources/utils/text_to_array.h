@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include "../includes/help.h"
-
-void help();
+#include <stdlib.h>
 
 int main(int argc, char **argv);
