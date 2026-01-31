@@ -6,7 +6,7 @@ USRCDIR = $(SRCDIR)/utils
 UDSTDIR = $(DSTDIR)/utils
 UTILS = text_to_array
 
-$(TARGET): $(SOURCES) | $(DSTDIR)
+$(TARGET): $(SOURCES) generate_help | $(DSTDIR)
 	cc -std=c89 -o $(TARGET) $(SRCDIR)/diceware.c
 
 $(DSTDIR):
@@ -35,5 +35,8 @@ text_to_array: $(USRCDIR)/text_to_array.h $(USRCDIR)/text_to_array.c | $(UDSTDIR
 	cc -std=c89 -o $(UDSTDIR)/text_to_array $(USRCDIR)/text_to_array.c
 
 utils: $(UTILS)
+
+generate_help: text_to_array $(SRCDIR)/files/help.txt
+	$(UDSTDIR)/text_to_array $(SRCDIR)/files/help.txt help_text $(SRCDIR)/includes/help.h
 
 .PHONY: clean info
