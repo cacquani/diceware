@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
     fprintf(outfile, "const unsigned char %s[%lu] = {\n", argv[2], size);
     for (i = 0; i < size; i++) {
-      fprintf(outfile, "0x%02x,%s", buffer[i], (i + 1) % 16 == 0 ? "\n" : " ");
+      fprintf(outfile, "0x%02x,%s", buffer[i], (i + 1) % 12 == 0 ? "\n" : " ");
     }
     fprintf(outfile, "\n};\n");
 

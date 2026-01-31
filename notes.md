@@ -24,7 +24,7 @@ As a minimum, this should return a list of n random words in the same language.
 The value for n should be an argument and defaulting to 6, the language should
 be an argument and defaulting to English.
 
-### First pass
+### First pass [done]
 
 The first pass is set up, figure out the basic makefile, and print a help.
 
