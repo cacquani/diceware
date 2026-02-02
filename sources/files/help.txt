@@ -2,3 +2,4 @@ usage: diceware <command> [<args>]
 
 Commands:
   help       Prints this help
+  roll       Roll a d6 6 times
