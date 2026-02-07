@@ -44,11 +44,20 @@ The words will be randomised using 6d6 and picked from the list.
 
 This pass includes:
 
-- lint the English dictionary to weed out numbers, special characters and
-  random meaningless strings
 - embed the English dictionary file using the GCC quirk highlighted below
 - write the actual code to randomize and string together the picked words
 - expand the help to add this command and re-embed it
+
+#### EFF wordlist
+
+While looking online, I stumbled upon the
+[EFF](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) wordlist,
+which is much better than the original wordlist because:
+
+- it doesn't have over-short words
+- it provides the prefix property (aka no word in the list is the prefix of
+  another word in the list)
+- it's handcrafted and they put a lot of effort into it
 
 ### Third pass
 
@@ -61,6 +70,16 @@ This pass includes:
 - lint and embed .de, .es, .fr and .it dictionaries
 - expand the code to choose from the right dictionary, and to randomise the
   required number of words instead of limiting to 6
+
+### Fourth pass
+
+Fourth pass will accept a list of dictionaries, and if more than one is passed
+it will randomise the dictionary from the list before randomising the word.
+
+### Fifth pass
+
+Fifth pass will accept a parameter that will enable altering the randomised
+words by adding or replacing numbers and special symbols.
 
 ## Complications
 
