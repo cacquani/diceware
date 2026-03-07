@@ -1,13 +1,5 @@
 #include "includes/diceware.h"
 
-/* Print the help from the embedded byte array */
-void help()
-{
-  int precision = sizeof(help_text)/sizeof(help_text[0]);
-
-  printf("%.*s\n", precision, help_text);
-}
-
 /* Roll [dice] d6 */
 int roll(int dice)
 {

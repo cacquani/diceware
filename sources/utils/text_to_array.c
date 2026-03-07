@@ -44,11 +44,16 @@ int main(int argc, char **argv)
       return 1;
     }
 
+    fprintf(outfile, "#ifndef __HELP_TEXT_H__\n");
+    fprintf(outfile, "#define __HELP_TEXT_H__\n\n");
+
     fprintf(outfile, "const unsigned char %s[%lu] = {\n", argv[2], size);
     for (i = 0; i < size; i++) {
       fprintf(outfile, "0x%02x,%s", buffer[i], (i + 1) % 12 == 0 ? "\n" : " ");
     }
     fprintf(outfile, "\n};\n");
+
+    fprintf(outfile, "\n#endif\n");
 
     fclose(outfile);
   }

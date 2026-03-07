@@ -1,12 +1,13 @@
 SRCDIR = sources
-SOURCES := $(wildcard $(SRCDIR)/*)
+SOURCES := $(wildcard $(SRCDIR)/*) $(wildcard $(ISRCDIR)/*)
 DSTDIR ?= dest
 TARGET ?= $(DSTDIR)/diceware
 USRCDIR = $(SRCDIR)/utils
 UDSTDIR = $(DSTDIR)/utils
+ISRCDIR = $(SRCDIR)/includes
 UTILS = text_to_array
 
-$(TARGET): $(SOURCES) generate_help | $(DSTDIR)
+$(TARGET): $(SOURCES) generate_help_text | $(DSTDIR)
 	cc -std=c89 -o $(TARGET) $(SRCDIR)/diceware.c
 
 $(DSTDIR):
@@ -36,7 +37,7 @@ text_to_array: $(USRCDIR)/text_to_array.h $(USRCDIR)/text_to_array.c | $(UDSTDIR
 
 utils: $(UTILS)
 
-generate_help: text_to_array $(SRCDIR)/files/help.txt
-	$(UDSTDIR)/text_to_array $(SRCDIR)/files/help.txt help_text $(SRCDIR)/includes/help.h
+generate_help_text: text_to_array $(SRCDIR)/files/help.txt
+	$(UDSTDIR)/text_to_array $(SRCDIR)/files/help.txt help_text $(SRCDIR)/includes/help_text.h
 
 .PHONY: clean info
